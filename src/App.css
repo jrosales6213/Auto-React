@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+:root {     
+  --textColor : #EEEEEE;
+  --darkGrey: #222831;
+  --lightTurquoise : #00ADB5;
+  --lightGrey : #393E46;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Raleway', sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+  background-color: var(--darkGrey);
 }
-
-.App-link {
-  color: #61dafb;
+.navbar-brand {
+  color: var(--textColor);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-brand:hover {
+  color: var(--lightTurquoise);
+}
+.navbar .navbar-toggler {
+  color: var(--lightTurquoise);
+  top: .25rem;
+  right: 1rem;
+}
+#navbar-btn {
+  color: var(--textColor);
+}
+.position-absolute {
+  position: absolute !important;
+}
+.sidebarMenu {
+ font-size: 1.2em;
+ background-color: var(--lightGrey);
+} 
+.sidebarMenu a{
+  color: var(--textColor);
+}
+.sidebarMenu a:hover {
+  color: var(--lightTurquoise);
+}
+.card {
+  background-color: var(--lightTurquoise);
+  color:  var(--textColor);
 }
