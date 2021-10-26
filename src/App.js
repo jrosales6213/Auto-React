@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import SideBar from "./components/sidebar/SideBar.js";
 import Content from "./components/content/Content";
+import CarImage from "./components/vehicleInfo/carImage.js";
 import "./App.css";
 
 const App = () => {

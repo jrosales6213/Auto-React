@@ -4,6 +4,8 @@ import { Container } from "reactstrap";
 import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./Topbar";
+import CarImage from "../vehicleInfo/carImage";
+
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
@@ -17,8 +19,8 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
       <Route exact path="/Pages" component={() => "Pages"} />
       <Route exact path="/faq" component={() => "FAQ"} />
       <Route exact path="/contact" component={() => "Contact"} />
-      <Route exact path="/Home-1" component={() => "Home-1"} />
-      <Route exact path="/Home-2" component={() => "Home-2"} />
+      <Route exact path="/Car-1"> <CarImage/></Route>
+      <Route exact path="/Home-2" component={() => "Testing home 2"} />
       <Route exact path="/Home-3" component={() => "Home-3"} />
       <Route exact path="/Page-1" component={() => "Page-1"} />
       <Route exact path="/Page-2" component={() => "Page-2"} />

@@ -61,14 +61,14 @@ const submenus = [
   [
     {
       title: "Honda Civic",
-      target: "Home-1",
+      target: "Car-1",
     },
     {
       title: "Toyota Corolla",
       target: "Home-2",
     },
     {
-      itle: "Home 3",
+      title: "Home 3",
       target: "Home-3",
     },
   ],

@@ -159,7 +159,9 @@ li a.dropdown-toggle::after {
   margin-left: 0;
   height: 100vh;
 }
-
+.stats-card {
+  background-color: #00ADB5;
+}
 @media only screen and (max-width: 500px) {
   body {
     overflow: hidden;
