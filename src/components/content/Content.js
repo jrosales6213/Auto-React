@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./Topbar";
 import CarImage from "../vehicleInfo/carImage";
+import EntryForm from "../content/EntryForm"
 
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
@@ -15,7 +16,7 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
     <Topbar toggleSidebar={toggleSidebar} />
     <Switch>
       <Route exact path="/" component={() => "Hello"} />
-      <Route exact path="/about" component={() => "About"} />
+      <Route exact path="/about"> <EntryForm/></Route>
       <Route exact path="/Pages" component={() => "Pages"} />
       <Route exact path="/faq" component={() => "FAQ"} />
       <Route exact path="/contact" component={() => "Contact"} />

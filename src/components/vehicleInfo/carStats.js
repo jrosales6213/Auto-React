@@ -5,9 +5,6 @@ import {
   faTachometerAlt,
   faHeartbeat,
   faExclamationCircle,
-  faChartBar,
-  faCopy,
-  faCalendar
 } from "@fortawesome/free-solid-svg-icons";
 import { Card,CardBody } from "reactstrap";
 import classNames from "classnames";

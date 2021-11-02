@@ -20,7 +20,7 @@ const Topbar = ({ toggleSidebar }) => {
     <Navbar
       color="light"
       light
-      className="navbar shadow-sm p-3 mb-5 bg-white rounded"
+      className="navbar shadow-sm p-3 mb-5 bg-light "
       expand="md"
     >
       <Button color="info" onClick={toggleSidebar}>
