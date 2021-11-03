@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from "classnames";
-import { Container } from "reactstrap";
+import { Container, Modal } from "reactstrap";
 import { Switch, Route } from "react-router-dom";
 
 import Topbar from "./Topbar";
 import CarImage from "../vehicleInfo/carImage";
-import EntryForm from "../content/EntryForm"
+import ModalForm from "../sidebar/ModalForm";
 
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
@@ -16,7 +16,7 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
     <Topbar toggleSidebar={toggleSidebar} />
     <Switch>
       <Route exact path="/" component={() => "Hello"} />
-      <Route exact path="/about"> <EntryForm/></Route>
+      <Route exact path="/about"> <ModalForm/></Route>
       <Route exact path="/Pages" component={() => "Pages"} />
       <Route exact path="/faq" component={() => "FAQ"} />
       <Route exact path="/contact" component={() => "Contact"} />

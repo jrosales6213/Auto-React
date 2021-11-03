@@ -13,7 +13,10 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 
+
+
 import SubMenu from "./SubMenu";
+import ModalForm from "./ModalForm";
 
 const SideBar = ({ isOpen, toggle }) => (
   <div className={classNames("sidebar", { "is-open": isOpen })}>
@@ -28,7 +31,7 @@ const SideBar = ({ isOpen, toggle }) => (
         <p>Main Page</p>
         <SubMenu  title="Home" icon={faHome} items={submenus[0]} />
         <NavItem>
-          <NavLink tag={Link} to={"/about"}>
+          <NavLink tag={Link} to={"/about"} toggle={ModalForm}>
             <FontAwesomeIcon className="mr-2" icon={faPlusCircle} />
              Add Car
           </NavLink>

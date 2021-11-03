@@ -45,9 +45,9 @@ function CarStats() {
               </CardBody>
             </Card>
         </div>
-        <div class="col-xl-3 col-sm-6 py-2">
-            <Card class="stats-card text-white h-100">
-              <CardBody class="card-body">
+        <div className="col-xl-3 col-sm-6 py-2">
+            <Card className="stats-card text-white h-100">
+              <CardBody className="card-body">
                 <div class="title">
                     <FontAwesomeIcon className="mr-2" icon={faExclamationCircle} />
                    Alerts
