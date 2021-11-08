@@ -4,6 +4,8 @@ import { Collapse, NavItem, NavLink } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
+
+
 const SubMenu = (props) => {
   const [collapsed, setCollapsed] = useState(true);
   const toggle = () => setCollapsed(!collapsed);
@@ -25,10 +27,10 @@ const SubMenu = (props) => {
         navbar
         className={classNames("items-menu", { "mb-1": !collapsed })}
       >
-        {items.map((item, index) => (
-          <NavItem key={index} className="pl-4">
-            <NavLink tag={Link} to={item.target}>
-              {item.title}
+        {items.map((item) => (
+          <NavItem key={item.id} className="pl-4">
+            <NavLink tag={Link} to="/directory/">
+              {item.make}
             </NavLink>
           </NavItem>
         ))}

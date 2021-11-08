@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from "./Home.js";
 // import {COMMENTS} from '../../shared/comments'
 import SideBar from "../sidebar/SideBar.js";
+import SubMenu from "../sidebar/SubMenu.js";
 
 // const [sidebarIsOpen, setSidebarOpen] = useState(true);
 //   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
@@ -45,6 +46,7 @@ class Main extends Component {
                 <Route path='/home' component={HomePage} />
                 <Route exact path='/directory' render={() => <Directory vehicles={this.state.vehicles} />} />
                 <Route path='/directory/:vehicleId' component={VehicleWithId} />
+                <Route path='/directory/:vehicleId' component={SubMenu} />
                 <Redirect to='/home' />
             </Switch>
   

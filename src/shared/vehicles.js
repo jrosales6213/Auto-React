@@ -1,8 +1,8 @@
 export const VEHICLES = [
     {
         id: 0,
-        make: 'React Lake Campground',
-        model: "Honda",
+        make: 'Honda',
+        model: "Civic",
         year: 2012,
         image: '../../images/hondacivic2012.jpg',
         description: "This car is fast",
