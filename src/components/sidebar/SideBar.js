@@ -11,10 +11,6 @@ import {
 import { NavItem, NavLink, Nav } from "reactstrap";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-
-
-
-
 import SubMenu from "./SubMenu";
 import ModalForm from "./ModalForm";
 import { VEHICLES } from "../../shared/vehicles";
