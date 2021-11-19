@@ -43,9 +43,9 @@ function Directory(props) {
 
     return (
         <div className="container">
-            <div className="row">
+            <Row >
                 {directory}
-            </div>
+            </Row>
         </div>
     );
 }

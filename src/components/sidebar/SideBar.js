@@ -24,7 +24,7 @@ const SideBar = ({ isOpen, toggle }) => (
       <h3>Auto React</h3>
     </div>
     <div className="side-menu">
-      <Nav vertical className= "list-unstyled pb-3">
+      <Nav vertical className= "list-unstyled pb-3 ">
         <p>Main Page</p>
         <NavItem>
           <NavLink tag={Link} to={"/directory"} >

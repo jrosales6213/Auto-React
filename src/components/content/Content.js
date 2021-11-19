@@ -1,4 +1,4 @@
-import React, { Component, useState} from "react";
+import React, { Component, setState} from "react";
 import Directory from "./Directory";
 import VehicleInfo from "./VehicleInfo";
 import Topbar from "./Topbar";
@@ -19,9 +19,12 @@ class Content extends Component {
     super(props);
     this.state ={
       vehicles: VEHICLES,
-      comments: COMMENTS
+      comments: COMMENTS,
+      sidebarIsOpen: true,
+      toggleSidebar: true
     };
   }
+
   render(){
     const HomePage = () => {
         return (
@@ -39,10 +42,10 @@ class Content extends Component {
 
     return (
         <div>
-      <Container fluid className={classNames("content")}>     
-    {/* <Container fluid className={classNames("content", { "is-open": sidebarIsOpen })}> */}
-    {/* <Topbar toggleSidebar={toggleSidebar} /> */}
-    <Topbar/>
+      {/* <Container fluid className={classNames("content")}>      */}
+    <Container fluid className={classNames("content", { "is-open": this.state.sidebarIsOpen })}>
+    <Topbar toggleSidebar={this.state.toggleSidebar} />
+    {/* <Topbar/> */}
       <Switch>
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/add-car"> <ModalForm/></Route>

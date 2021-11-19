@@ -30,6 +30,7 @@ a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 .sidebar {
+  position: sticky;
   min-width: 250px;
   max-width: 250px;
   background: var(--lightGrey);
@@ -117,6 +118,9 @@ li a.dropdown-toggle::after {
 }
 .stats-card {
   background-color: #00ADB5;
+}
+.vehicle-card {
+  justify-content: center;
 }
 @media only screen and (max-width: 500px) {
   body {
