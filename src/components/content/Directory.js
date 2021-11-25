@@ -4,14 +4,6 @@ import { Link } from 'react-router-dom';
 
 function RenderDirectoryItem({vehicle}) {
     return (
-        // <Card>
-        //     <Link to={`/directory/${vehicle.id}`}>
-        //     <CardImg width="100%" src={vehicle.image} alt={vehicle.name} />
-        //     <CardImgOverlay>
-        //         <CardTitle>{vehicle.name}</CardTitle>
-        //     </CardImgOverlay>
-        //     </Link>
-        // </Card>
 <Row  xs={1} > 
     <Col>
       <Card>
