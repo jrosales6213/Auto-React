@@ -1,4 +1,4 @@
-import React from "react";
+import React , {Component} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 import SubMenu from "./SubMenu";
 import ModalForm from "./ModalForm";
 import { VEHICLES } from "../../shared/vehicles";
-import { Component } from "react/cjs/react.production.min";
+// import { Component } from "react/cjs/react.production.min";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 class SideBar extends Component {

@@ -5,12 +5,13 @@ import Topbar from "./Topbar";
 import CarImage from "../vehicleInfo/carImage";
 import ModalForm from "../sidebar/ModalForm";
 import classNames from "classnames";
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import SideBar from "../sidebar/SideBar";
 import Home from "./Home.js";
 import { Container} from "reactstrap";
 import { Switch, Route, Redirect , withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addComment } from '../redux/ActionCreators';
+import { addComment } from "../../redux/ActionCreators";
 
 const mapStateToProps = state => {
     return {
@@ -20,7 +21,7 @@ const mapStateToProps = state => {
     };
 };
 const mapDispatchToProps = {
-  addComment: (vehicleId, text, author, date) => (addComment(vehicleId, text, author, date))
+  addComment: (vehicleId, text, author) => (addComment(vehicleId, text, author))
 };
 
 
@@ -45,6 +46,7 @@ class Content extends Component {
 
     return (
     <>
+    
     <Container fluid className={classNames("content")}>
     <Topbar onMenuToggle={this.props.onMenuToggle}/>
       <Switch>

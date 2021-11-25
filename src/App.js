@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import SideBar from "./components/sidebar/SideBar.js";
 import Content from "./components/content/Content";
 
@@ -28,7 +28,7 @@ class App extends Component {
         <Router>
           <div className="App wrapper">
             <SideBar onMenuToggle={this.toggleMenu} isMenuOpen={this.state.isMenuOpen} />
-            <Content onMenuToggle={this.toggleMenu} />
+            <Content onMenuToggle={this.toggleMenu}  />
           </div>
         </Router>
       </Provider>
@@ -37,21 +37,5 @@ class App extends Component {
 }
 
 export default App;
-
-import { Provider } from 'react-redux';
-import { ConfigureStore } from './redux/configureStore';
-. . .
-
-const store = ConfigureStore();
-
-. . .
-      <Provider store={store}>
-          <BrowserRouter>
-              <div className="App">
-                  <Main />
-              </div>
-          </BrowserRouter>
-      </Provider>
-
 
 
