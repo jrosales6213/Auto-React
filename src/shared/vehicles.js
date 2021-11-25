@@ -5,7 +5,7 @@ export const VEHICLES = [
         model: "Civic",
         year: 2012,
         image: '../../images/hondacivic2012.jpg',
-        description: "This car is fast",
+        description: "Jesus",
         comments: [
             {
                 id: 0,
@@ -50,7 +50,7 @@ export const VEHICLES = [
         model: "Corolla",
         year: 2014,
         image: '../../images/2015-toyota-corolla.png',
-        description: "This car is slow",
+        description: "Tony",
         comments: [
             {
                 id: 0,
@@ -90,11 +90,11 @@ export const VEHICLES = [
         ]
     },   
     {       id: 2,
-            make: 'Hyunday ',
+            make: 'Hyundai ',
             model: "Accent",
             year: 2015,
             image: '../../images/2015-hyundai-accent.jpg',
-            description: "This car is a hyundai",
+            description: "Bobby",
             comments: [
         
             {

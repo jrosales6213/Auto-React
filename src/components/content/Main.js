@@ -9,8 +9,6 @@ import Home from "./Home.js";
 import SideBar from "../sidebar/SideBar.js";
 import SubMenu from "../sidebar/SubMenu.js";
 
-// const [sidebarIsOpen, setSidebarOpen] = useState(true);
-//   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
 
 class Main extends Component {
   constructor(props) {
@@ -18,12 +16,9 @@ class Main extends Component {
     this.state ={
       vehicles: VEHICLES,
       comments: COMMENTS
-    //   selectedVehicle: null
     };
   }
-//   onVehicleSelect(vehicleId){
-//       this.setState({selectedVehicle: vehicleId})
-//   }
+
   render(){
     const HomePage = () => {
         return (
@@ -41,7 +36,7 @@ class Main extends Component {
 
     return (
         <div>
-            <SideBar/> 
+            {/* <SideBar toggle = {this.props.isMenuOpen}/>  */}
             <Switch>
                 <Route path='/home' component={HomePage} />
                 <Route exact path='/directory' render={() => <Directory vehicles={this.state.vehicles} />} />

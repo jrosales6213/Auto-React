@@ -7,7 +7,6 @@ import ModalForm from "../sidebar/ModalForm";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css"
 import Home from "./Home.js";
-
 import { Container, Modal } from "reactstrap";
 import { VEHICLES } from "../../shared/vehicles"
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -19,9 +18,7 @@ class Content extends Component {
     super(props);
     this.state ={
       vehicles: VEHICLES,
-      comments: COMMENTS,
-      sidebarIsOpen: true,
-      toggleSidebar: true
+      comments: COMMENTS
     };
   }
 
@@ -41,11 +38,9 @@ class Content extends Component {
     };  
 
     return (
-        <div>
-      {/* <Container fluid className={classNames("content")}>      */}
-    <Container fluid className={classNames("content", { "is-open": this.state.sidebarIsOpen })}>
-    <Topbar toggleSidebar={this.state.toggleSidebar} />
-    {/* <Topbar/> */}
+    <>
+    <Container fluid className={classNames("content")}>
+    <Topbar onMenuToggle={this.props.onMenuToggle}/>
       <Switch>
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/add-car"> <ModalForm/></Route>
@@ -65,7 +60,7 @@ class Content extends Component {
       </Switch>
   </Container>
   
-       </div>
+       </>
     )
   }
 }

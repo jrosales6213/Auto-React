@@ -12,15 +12,18 @@ function RenderDirectoryItem({vehicle}) {
         //     </CardImgOverlay>
         //     </Link>
         // </Card>
-<Row  xs={1} md={1}> 
+<Row  xs={1} > 
     <Col>
       <Card>
       <Link to={`/directory/${vehicle.id}`}>
-        <CardImg variant="top" src={vehicle.image} alt={vehicle.name}/>
+        <CardImg variant="top" className="card-image" src={vehicle.image} alt={vehicle.name}/>
         <CardBody>
-          <CardTitle className="h5">{vehicle.make} - {vehicle.model} - {vehicle.year}</CardTitle>
+          <CardTitle className="h5">{vehicle.year}-{vehicle.make} - {vehicle.model}</CardTitle>
           <CardText>
-            {vehicle.description}
+            This Vehicle belongs to : {vehicle.description}
+          </CardText>
+          <CardText>
+              Next Service Date : {vehicle.comments[0].date}
           </CardText>
         </CardBody>
         </Link>
@@ -35,7 +38,7 @@ function Directory(props) {
 
     const directory = props.vehicles.map(vehicle => {
         return (
-            <div key={vehicle.id} className="col-md-5 m-1">
+            <div key={vehicle.id} className="col-md-3 m-1">
                 <RenderDirectoryItem vehicle={vehicle}/>
             </div>
         );

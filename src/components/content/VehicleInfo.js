@@ -2,6 +2,7 @@ import React from 'react';
 import {
   faTrash,
   faEdit,
+  faCalendarDay
 } from "@fortawesome/free-solid-svg-icons";
 import { Card, CardImg, CardText, CardBody, CardTitle, Table } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,11 +13,11 @@ function RenderVehicles({vehicle}) {
         <Card>
             <CardImg top src={vehicle.image} alt={vehicle.make}  />
               <CardBody>
-                <CardTitle>{vehicle.make}</CardTitle>
-                <CardText>{vehicle.description}</CardText>
+                <CardTitle className="h4">{vehicle.year} - {vehicle.make}-{vehicle.model}</CardTitle>
+                <CardText className="h6">This vehicle belongs to : {vehicle.description}</CardText>
               </CardBody>
         </Card>
-     </div>
+      </div>
     )
 }
 
@@ -77,7 +78,7 @@ function VehicleInfo(props) {
     if (props.vehicle) {
         return (
             <div className="container">
-                <div className="row">
+                <div className="row justify-content-center">
                     <RenderVehicles vehicle={props.vehicle} />
                     {/* <RenderComments comments={props.comments} /> */}
                 </div>
