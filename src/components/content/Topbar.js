@@ -13,13 +13,7 @@ import {
 import { Link } from "react-router-dom";
 
 class Topbar extends Component {
-  // const [topbarIsOpen, setTopbarOpen] = useState(true);
-  // const toggleTopbar = () => setTopbarOpen(!topbarIsOpen);
 
-  constructor(props) {
-    super(props);
-    this.state = {/* Awesome State Not Yet Used */}
-  }
   render () {
     return (
       <Navbar

@@ -16,23 +16,10 @@ import ModalForm from "./ModalForm";
 import { VEHICLES } from "../../shared/vehicles";
 import { Component } from "react/cjs/react.production.min";
 
-// const SideBar = ({ isOpen, toggle }) => (
-//   <div className={classNames("sidebar", { "is-open": isOpen })}>
-{/* <div className={classNames(`sidebar.${this.props.isMenuOpen === true ? 'is-open' : ''}`)} */}
-//     <div className="sidebar-header">
-//       <span color="info" onClick={toggle} style={{ color: "#fff" }}>
-//         &times;
-//       </span>
 
 class SideBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {/* Awesome State Not Yet Used */}
-  }
-
 render() {
   return (
-    // // <div className={classNames("sidebar")}>
     <div className={classNames("sidebar", { "is-open": this.props.isMenuOpen })}> 
     <div className="sidebar-header">
     <span color="info" onClick={this.props.isMenuOpen} style={{ color: "#fff" }}>
