@@ -6,7 +6,7 @@ export const Comments = (state = COMMENTS, action) => {
         case ActionTypes.ADD_COMMENT:
             const comment = action.payload;
             comment.id = state.length;
-            comment.date = new Date().toISOString();
+            comment.date = new Date().toLocaleDateString();
             //Not sure is Date will cause buggs with date action Creator.//
             return state.concat(comment);
         default:

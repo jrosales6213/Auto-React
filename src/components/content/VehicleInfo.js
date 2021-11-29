@@ -59,10 +59,12 @@ class CommentForm extends Component {
   render() {
       return (
           <div>
-              <Button outline type="submit" onClick={this.toggleModal}>
-                  {/* <FontAwesomeIcon className ="fa-lg" icon={faPencil}/>  */}
-                   Submit Comment
-              </Button>
+              <div className="p-3 d-flex justify-content-center">
+                <Button  type="submit" onClick={this.toggleModal} color='warning'>
+                    {/* <FontAwesomeIcon className ="fa-lg" icon={faPencil}/>  */}
+                    Submit New Comment
+                </Button>
+              </div>
               <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                   <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                       <ModalBody>
@@ -104,7 +106,9 @@ class CommentForm extends Component {
 function RenderComments({comments, addComment, vehicleId}) {
     if (comments){
         return (
+
         <div className='col'>
+         <CommentForm vehicleId={vehicleId} addComment={addComment} /> 
         <Table >
           <thead>
             <tr>
@@ -129,9 +133,9 @@ function RenderComments({comments, addComment, vehicleId}) {
                 </tbody>
               )
           })}
-          <CommentForm vehicleId={vehicleId} addComment={addComment} /> 
+        
       </Table>
-      {/* <CommentForm vehicleId={vehicleId} addComment={addComment} />  */}
+    
       </div>
     );
   }

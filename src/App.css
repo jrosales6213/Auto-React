@@ -114,7 +114,6 @@ li a.dropdown-toggle::after {
 .content {
   padding: 20px;
   margin-left: 0;
-  height: 100vh;
 }
 .stats-card {
   background-color: #00ADB5;

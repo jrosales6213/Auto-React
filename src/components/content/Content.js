@@ -6,7 +6,6 @@ import CarImage from "../vehicleInfo/carImage";
 import ModalForm from "../sidebar/ModalForm";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SideBar from "../sidebar/SideBar";
 import Home from "./Home.js";
 import { Container} from "reactstrap";
 import { Switch, Route, Redirect , withRouter} from 'react-router-dom';
@@ -23,7 +22,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   addComment: (vehicleId, text, author) => (addComment(vehicleId, text, author))
 };
-
 
 class Content extends Component {
 
