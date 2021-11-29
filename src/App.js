@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
 import SideBar from "./components/sidebar/SideBar.js";
 import Content from "./components/content/Content";
 

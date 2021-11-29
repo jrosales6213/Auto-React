@@ -8,7 +8,6 @@ export const ConfigureStore = () => {
         combineReducers({
             vehicles: Vehicles,
             comments: Comments,
-       
         })
     );
 

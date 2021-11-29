@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAlignLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import {
   Navbar,
   Button,
@@ -23,7 +23,7 @@ class Topbar extends Component {
         expand="md"
       >
         <Button color="info" onClick={this.props.onMenuToggle}>
-          <FontAwesomeIcon icon={faAlignLeft} />
+          <FontAwesomeIcon icon={faAlignJustify} />
         </Button>
         <NavbarToggler onClick={this.props.onMenuToggle} />
         <Collapse isOpen={this.props.isMenuOpen}  navbar>
