@@ -124,7 +124,7 @@ function RenderComments({comments, addComment, vehicleId}) {
                   <tr key={comment.id}>
                     <td>{comment.date}</td>
                     <td>{comment.text}</td>
-                    <td>{comment.author}</td>
+                    <td>{comment.nextServiceDay}</td>
                     <td>
                       <FontAwesomeIcon className="mr-1" icon={faEdit} />
                       <FontAwesomeIcon  icon={faTrash}/>

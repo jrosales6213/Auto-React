@@ -1,15 +1,23 @@
+;import { actionTypes } from 'react-redux-form';
 import { COMMENTS } from '../shared/comments';
-import * as ActionTypes from './ActionTypes';
+import * from './ActionTypes';
 
-export const Comments = (state = COMMENTS, action) => {
-    switch (action.type) {
-        case ActionTypes.ADD_COMMENT:
-            const comment = action.payload;
+
+export default Comments =  (state = COMMENTS, action) => {
+  switch (action.type) {
+    case actionTypes.ADD_COMMENT:
+      const comment = action.payload;
             comment.id = state.length;
             comment.date = new Date().toLocaleDateString();
-            //Not sure is Date will cause buggs with date action Creator.//
             return state.concat(comment);
-        default:
-            return state;
-    }
-};
+            break;
+    case actionTypes.DELETE_COMMENT:
+           return state.filter(comment => comment !== action.payload);    
+            break;
+      case actionTypes.EDIT_COMMENT:
+           console.log(EDIT_COMMENT) 
+            break; 
+          default:
+              return state;
+  }
+}

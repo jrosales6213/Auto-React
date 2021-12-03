@@ -27,7 +27,7 @@ function RenderDirectoryItem({vehicle}) {
 
 function Directory(props) {
 
-    const directory = props.vehicles.map(vehicle => {
+    const directory = props.vehicle.map(vehicle => {
         return (
             <div key={vehicle.id} className="col-md-3 m-1">
                 <RenderDirectoryItem vehicle={vehicle}/>

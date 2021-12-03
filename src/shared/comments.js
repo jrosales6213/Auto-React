@@ -3,106 +3,106 @@ export const COMMENTS =
     {
         id: 0,
         vehicleId: 0,
+        date: "2018-10-25",
         text: "Car needed an oil Change!",
-        author: "Tinus Lorvaldes",
-        date: "2018-10-25T16:30Z"
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 1,
         vehicleId: 0,
-        text: "The campground was beautiful, but the bugs could bite sometimes.",
-        author: "Brennen Ech",
-        date: "2017-06-17T03:33Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 2,
         vehicleId: 0, 
-        text: "I caught a world-record-breaking trout here on my last visit.",
-        author: "McKenzie Sebastian",
-        date: "2019-02-18T18:12Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 3,
         vehicleId: 0,
-        text: "A wonderful place to reconnect with nature.",
-        author: "Jordan Runn",
-        date: "2019-08-04T20:11Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 4,
         vehicleId: 0,
-        text: "The stars at night were a revelation!",
-        author: "Ann Dabramov",
-        date: "2018-07-23T19:44Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 5,
         vehicleId: 1, 
-        text: "The campground was beautiful, but the bugs could bite sometimes.",
-        author: "Brennen Ech",
-        date: "2017-06-17T03:33Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 6,
         vehicleId: 1, 
-        text: "I caught a world-record-breaking trout here on my last visit.",
-        author: "McKenzie Sebastian",
-        date: "2019-02-18T18:12Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 7,
         vehicleId: 1, 
-        text: "A wonderful place to reconnect with nature.",
-        author: "Jordan Runn",
-        date: "2019-08-04T20:11Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 8,
         vehicleId: 1,
-        text: "The stars at night were a revelation!",
-        author: "Ann Dabramov",
-        date: "2018-07-23T19:44Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 9,
         vehicleId: 1, 
-        text: "What a magnificent view!",
-        author: "Tinus Lorvaldes",
-        date: "2018-10-25T16:30Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 10,
         vehicleId: 2,
-        text: "I caught a world-record-breaking trout here on my last visit.",
-        author: "McKenzie Sebastian",
-        date: "2019-02-18T18:12Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 11,
         vehicleId: 2,
-        text: "A wonderful place to reconnect with nature.",
-        author: "Jordan Runn",
-        date: "2019-08-04T20:11Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 12,
         vehicleId: 2, 
-        text: "The stars at night were a revelation!",
-        author: "Ann Dabramov",
-        date: "2018-07-23T19:44Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 13,
         vehicleId: 2, 
-        text: "What a magnificent view!",
-        author: "Tinus Lorvaldes",
-        date: "2018-10-25T16:30Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     },
     {
         id: 14,
         vehicleId: 2,
-        text: "The campground was beautiful, but the bugs could bite sometimes.",
-        author: "Brennen Ech",
-        date: "2017-06-17T03:33Z"
+        date: "2017-06-17",
+        text: "Rotated Tires. Found a small leak in radiator. radiator got replaced. ",
+        nextServiceDay: "1-25-2019",
     }
 ]
