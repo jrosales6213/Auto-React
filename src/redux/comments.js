@@ -32,6 +32,8 @@ export const Comments = (state = COMMENTS, action) => {
             comment.date = new Date().toLocaleDateString();
             //Not sure is Date will cause buggs with date action Creator.//
             return state.concat(comment);
+        case ActionTypes.DELETE_COMMENT:
+            return state.filter(comment => comment !== action.payload);    
         default:
             return state;
     }

@@ -10,7 +10,7 @@ import Home from "./Home.js";
 import { Container} from "reactstrap";
 import { Switch, Route, Redirect , withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addComment } from "../../redux/ActionCreators";
+import { addComment , deleteComment} from "../../redux/ActionCreators";
 
 const mapStateToProps = state => {
     return {
@@ -20,7 +20,8 @@ const mapStateToProps = state => {
     };
 };
 const mapDispatchToProps = {
-  addComment: (vehicleId, text, author) => (addComment(vehicleId, text, author))
+  addComment: (vehicleId, text, nextServiceDay) => (addComment(vehicleId, text, nextServiceDay)),
+  deleteComment: (vehicleId, text, nextServiceDay) => (deleteComment(vehicleId, text, nextServiceDay))
 };
 
 class Content extends Component {
@@ -37,6 +38,7 @@ class Content extends Component {
                 vehicle={this.props.vehicles.filter(vehicle => vehicle.id === +match.params.vehicleId)[0]}
                 comments={this.props.comments.filter(comment => comment.vehicleId === +match.params.vehicleId)}
                 addComment={this.props.addComment}
+                deleteComment={this.props.deleteComment}
             />
         );
     };  
