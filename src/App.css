@@ -5,6 +5,7 @@
   --lightGrey: #393e46;
   --color-primary: #ce4036;
   --dropdown-link: #f5f5f5;
+  --lightTextGrey: #4f5f6f;
 
   /* $color-primary-lighter: lighten($color-primary-light, 6%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
@@ -116,6 +117,7 @@ li a.dropdown-toggle::after {
 /* ---------------------------------------------------
     TOPBAR STYLE
 ----------------------------------------------------- */
+/* Profile */
 .avatar-img {
   display: inline-block;
   width: 35px;
@@ -128,29 +130,40 @@ li a.dropdown-toggle::after {
   background-position: center;
   background-size: cover;
   vertical-align: middle;
+  position: static;
 }
 
-.header .header-block-nav .notifications {
+.name {
+  display: inline-block;
+  margin-right: 9px;
+  font-weight: bold;
+}
+
+.profile-dropdown-item {
+  color: var(--lightTextGrey);
+  left: auto;
+  right: 0;
+  min-width: 180px;
+  white-space: normal;
+}
+
+/* Notifications */
+.notifications {
   font-size: 16px;
 }
-.header .header-block-nav .notifications .a {
-  padding-right: 10px;
-}
-.header .header-block-nav .notifications .a .counter {
+
+.notifications .counter {
   font-weight: bold;
   font-size: 14px;
   position: relative;
   top: -3px;
   left: -2px;
 }
-.header .header-block-nav .notifications .a .new .counter {
+/* applied when new notification */
+.new .counter {
   color: var(--color-primary);
   font-weight: bold;
 }
-
-/* @include media-down(sm) {
-			position: static;
-		} */
 
 .notifications-dropdown-menu {
   white-space: normal;
@@ -158,35 +171,14 @@ li a.dropdown-toggle::after {
   right: 0;
   min-width: 350px;
 }
-.notifications-dropdown-menu:before {
-  position: absolute;
-  right: 20px;
-  bottom: 100%;
-  margin-right: -1px;
-  /* // @include triangle(up, 10px, $dropdown-border); */
-}
 
-.notifications-dropdown-menu:after {
-  position: absolute;
-  right: 20px;
-  bottom: 100%;
-  /* // @include triangle(up, 9px, $dropdown-bg); */
-}
-
-.notifications-container .notification-item {
-  border-bottom: 1px solid var(--lightGrey);
-  padding: 5px;
-}
-.notifications-container .notification-item:hover {
-  background-color: var(--darkGrey);
-}
 .body-col {
   padding: 5px;
   display: table-cell;
 }
 
 p {
-  color: #4f5f6f;
+  color: var(--lightTextGrey);
   display: inline-block;
   line-height: 18px;
   font-size: 13px;
@@ -197,7 +189,7 @@ p .accent {
   font-weight: bold;
 }
 
-footer {
+/* footer {
   text-align: center;
 }
 footer a {
@@ -207,7 +199,7 @@ footer a {
 footer a:hover {
   background-color: var(--dropdown-link);
   color: #85ce36;
-}
+} */
 
 /* @include media-down(sm) {
 			min-width: 100px;
