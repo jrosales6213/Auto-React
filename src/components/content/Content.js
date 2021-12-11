@@ -6,6 +6,7 @@ import ModalForm from "../Navbar/ModalForm";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Home.js";
+import AddVehicle from "../Navbar/AddVehicleForm";
 import { Container } from "reactstrap";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
@@ -51,9 +52,7 @@ class Content extends Component {
           <Topbar onMenuToggle={this.props.onMenuToggle} />
           <Switch>
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/add-car">
-              <ModalForm />
-            </Route>
+            <Route exact path="/add-car" render={() => <AddVehicle />}></Route>
             <Route
               exact
               path="/directory"

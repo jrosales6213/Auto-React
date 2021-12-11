@@ -6,15 +6,15 @@ import {
   faWrench,
   faHistory,
   faChartBar,
-  faCopy,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavItem, NavLink, Nav } from "reactstrap";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import SubMenu from "./SubMenu";
+// import SubMenu from "./SubMenu";
 import ModalForm from "./ModalForm";
 import { VEHICLES } from "../../shared/vehicles";
 // import { Component } from "react/cjs/react.production.min";
+import addVehicle from "./AddVehicleForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class SideBar extends Component {
@@ -44,7 +44,7 @@ class SideBar extends Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to={"/add-car"} toggle={ModalForm}>
+              <NavLink tag={Link} to={"/add-car"}>
                 <FontAwesomeIcon className="mr-2" icon={faPlusCircle} />
                 Add Car
               </NavLink>
