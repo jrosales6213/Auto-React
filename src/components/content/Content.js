@@ -2,7 +2,6 @@ import React, { Component, setState } from "react";
 import Directory from "./Directory";
 import VehicleInfo from "./VehicleInfo";
 import Topbar from "./Topbar";
-import ModalForm from "../Navbar/ModalForm";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Home.js";
@@ -51,11 +50,10 @@ class Content extends Component {
         <Container fluid className={classNames("content")}>
           <Topbar onMenuToggle={this.props.onMenuToggle} />
           <Switch>
-            <Route exact path="/home" component={HomePage} />
             <Route exact path="/add-car" render={() => <AddVehicle />}></Route>
             <Route
               exact
-              path="/directory"
+              path="/home"
               render={() => <Directory vehicles={this.props.vehicles} />}
             />
             <Route
@@ -63,14 +61,10 @@ class Content extends Component {
               path="/directory/:vehicleId"
               component={VehicleWithId}
             />
-            <Route exact path="/service" component={() => "Service"} />
-            <Route exact path="/history" component={() => "History"} />
-            <Route exact path="/stats" component={() => "Stats"} />
+            <Route exact path="/diagnostics" component={() => "Diagnostics"} />
+            <Route exact path="/costs" component={() => "Costs"} />
+            <Route exact path="/recall" component={() => "Recall"} />
             <Route exact path="/Page-2" component={() => "Page-2"} />
-            <Route exact path="/page-1" component={() => "page-1"} />
-            <Route exact path="/page-2" component={() => "page-2"} />
-            <Route exact path="/page-3" component={() => "page-3"} />
-            <Route exact path="/page-4" component={() => "page-4"} />
             <Redirect to="/home" />
           </Switch>
         </Container>

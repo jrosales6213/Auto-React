@@ -36,9 +36,9 @@ class SideBar extends Component {
 
         <div className="side-menu">
           <Nav vertical className="list-unstyled pb-3 ">
-            <p>Main Page</p>
+            <p>Side Menu</p>
             <NavItem>
-              <NavLink tag={Link} to={"/directory"}>
+              <NavLink tag={Link} to={"/home"}>
                 <FontAwesomeIcon className="mr-2" icon={faHome} />
                 DashBoard
               </NavLink>
@@ -52,19 +52,19 @@ class SideBar extends Component {
 
             {/* <SubMenu title="Cars" icon={faCopy} items={VEHICLES} /> */}
             <NavItem>
-              <NavLink tag={Link} to={"/service"}>
+              <NavLink tag={Link} to={"/diagnostics"}>
                 <FontAwesomeIcon icon={faWrench} className="mr-2" />
                 Diagnostics
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to={"/history"}>
+              <NavLink tag={Link} to={"/costs"}>
                 <FontAwesomeIcon icon={faHistory} className="mr-2" />
                 Repair Cost
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to={"/stats"}>
+              <NavLink tag={Link} to={"/recall"}>
                 <FontAwesomeIcon icon={faChartBar} className="mr-2" />
                 Recall
               </NavLink>
