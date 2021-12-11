@@ -148,7 +148,7 @@ li a.dropdown-toggle::after {
 }
 
 /* Notifications */
-.notifications {
+/* .notifications {
   font-size: 16px;
 }
 
@@ -159,7 +159,7 @@ li a.dropdown-toggle::after {
   top: -3px;
   left: -2px;
 }
-/* applied when new notification */
+
 .new .counter {
   color: var(--color-primary);
   font-weight: bold;
@@ -187,31 +187,6 @@ p {
 }
 p .accent {
   font-weight: bold;
-}
-
-/* footer {
-  text-align: center;
-}
-footer a {
-  color: #131e26;
-  transition: none;
-}
-footer a:hover {
-  background-color: var(--dropdown-link);
-  color: #85ce36;
-} */
-
-/* @include media-down(sm) {
-			min-width: 100px;
-			width: 100%;
-			margin-top: 5px;
-
-			&:before,
-			&:after {
-				right: 107px;
-			}
-		}
-	}
 } */
 
 /* ---------------------------------------------------

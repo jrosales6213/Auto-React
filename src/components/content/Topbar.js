@@ -46,18 +46,15 @@ class Topbar extends Component {
         </Button>
 
         <Nav className="ml-auto" navbar>
-          {/*---- NOTIFICAITON ICON------*/}
+          {/* ---- NOTIFICAITON ICON------
           <UncontrolledDropdown inNavbar nav>
             <DropdownToggle nav className="notifications new p-2">
-              {/* <a href="" data-toggle="dropdown"> */}
               <FontAwesomeIcon icon={faBell} size="lg" />
               <sup>
                 <span className="counter">2</span>
               </sup>
-              {/* </a> */}
             </DropdownToggle>
-
-            {/* ----NOTIFICATION TOGGLE----- */}
+             ----NOTIFICATION TOGGLE----- 
             <DropdownMenu className="notifications-dropdown-menu">
               <DropdownItem>
                 <div className="body-col">
@@ -76,7 +73,7 @@ class Topbar extends Component {
                 </div>
               </DropdownItem>
             </DropdownMenu>
-          </UncontrolledDropdown>
+          </UncontrolledDropdown>  */}
 
           {/*---- PROFILE ICON -----*/}
           <UncontrolledDropdown inNavbar nav>
