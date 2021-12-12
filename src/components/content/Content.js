@@ -10,6 +10,9 @@ import { Container } from "reactstrap";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addComment, deleteComment } from "../../redux/ActionCreators";
+import Diagnostics from "../Navbar/DiagnosticsForm";
+import WarrantyForm from "../Navbar/WarrantyForm";
+import RecallForm from "../Navbar/RecallForm";
 
 const mapStateToProps = (state) => {
   return {
@@ -61,10 +64,10 @@ class Content extends Component {
               path="/directory/:vehicleId"
               component={VehicleWithId}
             />
-            <Route exact path="/diagnostics" component={() => "Diagnostics"} />
-            <Route exact path="/costs" component={() => "Costs"} />
-            <Route exact path="/recall" component={() => "Recall"} />
-            <Route exact path="/Page-2" component={() => "Page-2"} />
+            <Route exact path="/diagnostics" render={() => <Diagnostics />} />
+            <Route exact path="/warranty" component={() => <WarrantyForm />} />
+            <Route exact path="/recall" component={() => <RecallForm />} />
+            <Route exact path="/about" component={() => "About"} />
             <Redirect to="/home" />
           </Switch>
         </Container>

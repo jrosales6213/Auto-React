@@ -4,17 +4,13 @@ import {
   faHome,
   faPlusCircle,
   faWrench,
-  faHistory,
-  faChartBar,
+  faDollarSign,
+  faExclamationTriangle,
+  faInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavItem, NavLink, Nav } from "reactstrap";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-// import SubMenu from "./SubMenu";
-import ModalForm from "./ModalForm";
-import { VEHICLES } from "../../shared/vehicles";
-// import { Component } from "react/cjs/react.production.min";
-import addVehicle from "./AddVehicleForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class SideBar extends Component {
@@ -34,9 +30,8 @@ class SideBar extends Component {
           <h3>Auto React</h3>
         </div>
 
-        <div className="side-menu">
+        <div className="side-menu pt-2">
           <Nav vertical className="list-unstyled pb-3 ">
-            <p>Side Menu</p>
             <NavItem>
               <NavLink tag={Link} to={"/home"}>
                 <FontAwesomeIcon className="mr-2" icon={faHome} />
@@ -58,15 +53,24 @@ class SideBar extends Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to={"/costs"}>
-                <FontAwesomeIcon icon={faHistory} className="mr-2" />
-                Repair Cost
+              <NavLink tag={Link} to={"/warranty"}>
+                <FontAwesomeIcon icon={faDollarSign} className="mr-2" />
+                Warranty
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={Link} to={"/recall"}>
-                <FontAwesomeIcon icon={faChartBar} className="mr-2" />
+                <FontAwesomeIcon
+                  icon={faExclamationTriangle}
+                  className="mr-2"
+                />
                 Recall
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to={"/about"}>
+                <FontAwesomeIcon icon={faInfo} className="mr-2" />
+                About
               </NavLink>
             </NavItem>
           </Nav>
@@ -76,31 +80,31 @@ class SideBar extends Component {
   }
 }
 
-const submenus = [
-  [
-    {
-      title: "Honda Civic",
-      target: "Car-1",
-    },
-    {
-      title: "Toyota Corolla",
-      target: "Home-2",
-    },
-    {
-      title: "Home 3",
-      target: "Home-3",
-    },
-  ],
-  [
-    {
-      title: "Page 1",
-      target: "Page-1",
-    },
-    {
-      title: "Page 2",
-      target: "Page-2",
-    },
-  ],
-];
+// const submenus = [
+//   [
+//     {
+//       title: "Honda Civic",
+//       target: "Car-1",
+//     },
+//     {
+//       title: "Toyota Corolla",
+//       target: "Home-2",
+//     },
+//     {
+//       title: "Home 3",
+//       target: "Home-3",
+//     },
+//   ],
+//   [
+//     {
+//       title: "Page 1",
+//       target: "Page-1",
+//     },
+//     {
+//       title: "Page 2",
+//       target: "Page-2",
+//     },
+//   ],
+// ];
 
 export default SideBar;
