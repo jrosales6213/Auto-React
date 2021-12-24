@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import { ConfigureStore } from "./redux/configureStore";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import SideBar from "./components/Navbar/SideBar";
-import Content from "./components/Content/Content";
+// import SideBar from "./components/Navbar/SideBar";
+import Main from "./components/Main";
 
 const store = ConfigureStore();
 
@@ -27,11 +27,14 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App wrapper">
-            <SideBar
+            {/* <SideBar
+              onMenuToggle={this.toggleMenu}
+              isMenuOpen={this.state.isMenuOpen}
+            /> */}
+            <Main
               onMenuToggle={this.toggleMenu}
               isMenuOpen={this.state.isMenuOpen}
             />
-            <Content onMenuToggle={this.toggleMenu} />
           </div>
         </Router>
       </Provider>

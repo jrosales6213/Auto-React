@@ -1,18 +1,18 @@
 import React, { Component, setState } from "react";
-import Directory from "./Directory";
 import VehicleInfo from "./VehicleInfo";
 import Topbar from "./Topbar";
+import Sidebar from "./SideBar";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./Home.js";
-import AddVehicle from "../Navbar/AddVehicleForm";
+import AddVehicle from "./AddVehicleForm";
+import Diagnostics from "./DiagnosticsForm";
+import WarrantyForm from "./WarrantyForm";
+import RecallForm from "./RecallForm";
+import DashboardItems from "./Home";
 import { Container } from "reactstrap";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { addComment, deleteComment } from "../../redux/ActionCreators";
-import Diagnostics from "../Navbar/DiagnosticsForm";
-import WarrantyForm from "../Navbar/WarrantyForm";
-import RecallForm from "../Navbar/RecallForm";
+import { addComment, addVehicle } from "../redux/ActionCreators";
 
 const mapStateToProps = (state) => {
   return {
@@ -23,14 +23,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   addComment: (vehicleId, text, nextServiceDay) =>
     addComment(vehicleId, text, nextServiceDay),
-  deleteComment: (id) => deleteComment(id),
+  addVehicle: (make, model, year, owner) =>
+    addVehicle(make, model, year, owner),
 };
 
-class Content extends Component {
+class Main extends Component {
   render() {
-    const HomePage = () => {
-      return <Home />;
-    };
     const VehicleWithId = ({ match }) => {
       return (
         <VehicleInfo
@@ -43,21 +41,28 @@ class Content extends Component {
             (comment) => comment.vehicleId === +match.params.vehicleId
           )}
           addComment={this.props.addComment}
-          deleteComment={this.props.deleteComment}
         />
       );
     };
 
     return (
       <>
+        <Sidebar
+          onMenuToggle={this.props.toggleMenu}
+          isMenuOpen={this.props.isMenuOpen}
+        />
         <Container fluid className={classNames("content")}>
           <Topbar onMenuToggle={this.props.onMenuToggle} />
           <Switch>
-            <Route exact path="/add-car" render={() => <AddVehicle />}></Route>
+            <Route
+              exact
+              path="/add-car"
+              render={() => <AddVehicle addVehicle={addVehicle} />}
+            ></Route>
             <Route
               exact
               path="/home"
-              render={() => <Directory vehicles={this.props.vehicles} />}
+              render={() => <DashboardItems vehicles={this.props.vehicles} />}
             />
             <Route
               exact
@@ -76,8 +81,4 @@ class Content extends Component {
   }
 }
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Content)
-);
-
-//11-7-21 - added vehicle cards. Things need to do : link submenu to vehicle. Create a updated card. Submit button for new comments.
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

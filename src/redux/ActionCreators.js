@@ -1,28 +1,23 @@
-import { actionTypes } from 'react-redux-form';
-import * as ActionTypes from './ActionTypes';
+import * as ActionTypes from "./ActionTypes";
+
+//---COMMENTS---//
 
 export const addComment = (vehicleId, text, nextServiceDay) => ({
-    type: ActionTypes.ADD_COMMENT,
-    payload: {
-        vehicleId: vehicleId,
-        text: text,
-        nextServiceDay: nextServiceDay,
-    }
+  type: ActionTypes.ADD_COMMENT,
+  payload: {
+    vehicleId: vehicleId,
+    text: text,
+    nextServiceDay: nextServiceDay,
+  },
 });
-// export const deleteComment = (vehicleId) => ({
-//     type: ActionTypes.DELETE_COMMENT,
-//     payload: {
-//         vehicleId: vehicleId,
-//     }
-// });
 
-export const deleteComment = id => ({
-    type: ActionTypes.DELETE_COMMENT,
-    payload: {
-        id: id 
-    }
-}); 
-// export const deleteFavorite = campsiteId => ({
-//     type: ActionTypes.DELETE_FAVORITE,
-//     payload: campsiteId
-// }); 
+//----VEHICLES-----//
+export const addVehicle = (make, model, year, owner) => ({
+  type: ActionTypes.ADD_VEHICLE,
+  payload: {
+    make: make,
+    model: model,
+    year: year,
+    owner: owner,
+  },
+});

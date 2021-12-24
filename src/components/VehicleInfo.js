@@ -25,12 +25,13 @@ function RenderVehicles({ vehicle }) {
     <div className="col-md-5 m-1">
       <Card>
         <CardImg top src={vehicle.image} alt={vehicle.make} />
+
         <CardBody>
           <CardTitle className="h4">
             {vehicle.year} - {vehicle.make}-{vehicle.model}
           </CardTitle>
           <CardText className="h6">
-            This vehicle belongs to : {vehicle.description}
+            This vehicle belongs to : {vehicle.owner}
           </CardText>
         </CardBody>
       </Card>
@@ -44,12 +45,6 @@ class CommentForm extends Component {
 
     this.state = {
       isModalOpen: false,
-      author: "",
-      text: "",
-      touched: {
-        author: false,
-        text: false,
-      },
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -117,7 +112,6 @@ class CommentForm extends Component {
                 />
               </div>
               <Button type="submit" value="submit" className="bg-primary">
-                {" "}
                 Submit
               </Button>
             </LocalForm>
@@ -128,12 +122,12 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, addComment, vehicleId, deleteComment }) {
+function RenderComments({ comments, addComment, vehicleId }) {
   if (comments) {
     return (
       <div className="col">
         <CommentForm vehicleId={vehicleId} addComment={addComment} />
-        <Table deleteComment={deleteComment}>
+        <Table>
           <thead>
             <tr>
               <th>Date</th>
@@ -149,15 +143,23 @@ function RenderComments({ comments, addComment, vehicleId, deleteComment }) {
                   <td>{comment.date}</td>
                   <td>{comment.text}</td>
                   <td>{comment.nextServiceDay}</td>
+                  {/* <delete and edit buttons go here/> */}
                   <td>
-                    <FontAwesomeIcon className="mr-1" icon={faEdit} />
-                    <FontAwesomeIcon
-                      key={comment.id}
-                      onClick={() => this.props.deleteComment(comment.id)}
-                      icon={faTrash}
-                    />
-
-                    {/* <delete and edit buttons go here/> */}
+                    <button className="btn">
+                      <FontAwesomeIcon
+                        className=""
+                        icon={faEdit}
+                        onClick={console.log("you clicked edit button")}
+                      />
+                    </button>
+                    <button className="btn">
+                      <FontAwesomeIcon
+                        key={comment.id}
+                        onClick={console.log("you clicked delete button")}
+                        // onClick={() => this.props.deleteComment(comment.id)}
+                        icon={faTrash}
+                      />
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -182,7 +184,6 @@ function VehicleInfo(props) {
             comments={props.comments}
             addComment={props.addComment}
             vehicleId={props.vehicle.id}
-            deleteComment={props.deleteComment}
           />
         </div>
       </div>
