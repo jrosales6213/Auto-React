@@ -6,7 +6,7 @@ export const Vehicles = (state = VEHICLES, action) => {
     case ActionTypes.ADD_VEHICLE:
       const vehicle = action.payload;
       vehicle.id = state.length;
-      // vehicle.date = new Date().toLocaleDateString();
+      vehicle.date = new Date().toLocaleDateString();
       return state.concat(vehicle);
     default:
       return state;

@@ -98,6 +98,7 @@ import { Container } from "reactstrap";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addComment, addVehicle } from "../redux/ActionCreators";
+import TestComponent from "./TestComponent";
 
 const mapStateToProps = (state) => {
   return {
@@ -157,7 +158,13 @@ class Main extends Component {
             <Route exact path="/diagnostics" render={() => <Diagnostics />} />
             <Route exact path="/warranty" component={() => <WarrantyForm />} />
             <Route exact path="/recall" component={() => <RecallForm />} />
-            <Route exact path="/about" component={() => "About"} />
+            <Route
+              exact
+              path="/about"
+              component={() => (
+                <TestComponent addVehicle={this.props.AddVehicle} />
+              )}
+            />
             <Redirect to="/home" />
           </Switch>
         </Container>
