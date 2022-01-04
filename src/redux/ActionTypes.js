@@ -1,5 +1,6 @@
 export const ADD_COMMENT = "ADD_COMMENT";
 export const DELETE_COMMENT = "DELETE_COMMENT";
+export const DELETE_COMMENT_ERROR = "DELETE_COMMENT_ERROR";
 export const EDIT_COMMENT = "EDIT_COMMENT";
 
 export const ADD_VEHICLE = "ADD_VEHICLE";

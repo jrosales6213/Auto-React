@@ -50,8 +50,9 @@ import { Provider } from "react-redux";
 import { ConfigureStore } from "./redux/configureStore";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-// import SideBar from "./components/Navbar/SideBar";
 import Main from "./components/Main";
+import { createBrowserHistory } from "history";
+export const history = createBrowserHistory({ forceRefresh: true });
 
 const store = ConfigureStore();
 

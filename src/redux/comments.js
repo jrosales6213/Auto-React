@@ -9,7 +9,13 @@ export const Comments = (state = COMMENTS, action) => {
       comment.date = new Date().toLocaleDateString();
       return state.concat(comment);
     case ActionTypes.DELETE_COMMENT:
-      return state.filter((comment) => comment !== action.payload);
+      const filterComment = state.comments.filter(
+        (comment) => comment.id != action.payload.id
+      );
+      return { ...state, comments: filterComment };
+    case ActionTypes.DELETE_COMMENT_ERROR:
+      return { ...state, errors: action.payload };
+    // return state.filter((comment) => comment !== action.payload);
     default:
       return state;
   }

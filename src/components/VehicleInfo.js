@@ -122,7 +122,7 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, addComment, vehicleId }) {
+function RenderComments({ comments, addComment, vehicleId, deleteComment }) {
   if (comments) {
     return (
       <div className="col">
@@ -154,9 +154,9 @@ function RenderComments({ comments, addComment, vehicleId }) {
                     </button>
                     <button className="btn">
                       <FontAwesomeIcon
-                        key={comment.id}
-                        onClick={console.log("you clicked delete button")}
-                        // onClick={() => this.props.deleteComment(comment.id)}
+                        key={comment.vehicleId}
+                        // onClick={console.log("you clicked delete button")}
+                        onClick={() => deleteComment(comment.id)}
                         icon={faTrash}
                       />
                     </button>
@@ -184,6 +184,7 @@ function VehicleInfo(props) {
             comments={props.comments}
             addComment={props.addComment}
             vehicleId={props.vehicle.id}
+            deleteComment={props.deleteComment}
           />
         </div>
       </div>

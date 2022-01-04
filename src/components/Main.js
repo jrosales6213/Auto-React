@@ -97,7 +97,7 @@ import DashboardItems from "./Home";
 import { Container } from "reactstrap";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { addComment, addVehicle } from "../redux/ActionCreators";
+import { addComment, addVehicle, deleteComment } from "../redux/ActionCreators";
 import TestComponent from "./TestComponent";
 
 const mapStateToProps = (state) => {
@@ -109,6 +109,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   addComment: (vehicleId, text, nextServiceDay) =>
     addComment(vehicleId, text, nextServiceDay),
+  deleteComment: (id) => deleteComment(id),
   addVehicle: (make, model, year, owner) =>
     addVehicle(make, model, year, owner),
 };
@@ -127,6 +128,7 @@ class Main extends Component {
             (comment) => comment.vehicleId === +match.params.vehicleId
           )}
           addComment={this.props.addComment}
+          deleteComment={this.props.deleteComment}
         />
       );
     };
