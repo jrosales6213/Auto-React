@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, Label, Input, Form } from "reactstrap";
 import { Control, LocalForm, Errors } from "react-redux-form";
+import { VEHICLES } from "../shared/vehicles";
 
 export default class AddVehicle extends Component {
   constructor(props) {
@@ -23,7 +24,8 @@ export default class AddVehicle extends Component {
   }
 
   handleSubmit(values) {
-    console.log(values.make, values.model, values.year, values.owner);
+    alert(values.make + values.model + values.year + values.owner);
+
     this.props.AddVehicle(values.make, values.model, values.year, values.owner);
   }
   render() {
