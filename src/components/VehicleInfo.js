@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Control, LocalForm, Errors } from "react-redux-form";
+import { Loading } from "./LoadingComponent";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -59,7 +60,12 @@ class CommentForm extends Component {
 
   handleSubmit(values) {
     this.toggleModal();
-    this.props.addComment(this.props.vehicleId, values.text, values.author);
+    this.props.postComment(
+      // this.props.vehicleId,
+      values.vehicleId,
+      values.text,
+      values.author
+    );
   }
 
   render() {
@@ -122,11 +128,11 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, addComment, vehicleId, deleteComment }) {
+function RenderComments({ comments, postComment, vehicleId, deleteComment }) {
   if (comments) {
     return (
       <div className="col">
-        <CommentForm vehicleId={vehicleId} addComment={addComment} />
+        <CommentForm vehicleId={vehicleId} postComment={postComment} />
         <Table>
           <thead>
             <tr>
@@ -173,6 +179,26 @@ function RenderComments({ comments, addComment, vehicleId, deleteComment }) {
 }
 
 function VehicleInfo(props) {
+  if (props.isLoading) {
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+  if (props.errMess) {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h4>{props.errMess}</h4>
+          </div>
+        </div>
+      </div>
+    );
+  }
   if (props.vehicle) {
     return (
       <div className="container">
@@ -182,7 +208,7 @@ function VehicleInfo(props) {
         <div className="row">
           <RenderComments
             comments={props.comments}
-            addComment={props.addComment}
+            postComment={props.postComment}
             vehicleId={props.vehicle.id}
             deleteComment={props.deleteComment}
           />
