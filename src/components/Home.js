@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 function RenderHomePage({ vehicle }) {
   return (
@@ -21,7 +22,7 @@ function RenderHomePage({ vehicle }) {
               <CardImg
                 variant="top"
                 className="card-image"
-                src={vehicle.image}
+                src={baseUrl + vehicle.image}
                 alt={vehicle.name}
               />
             </div>

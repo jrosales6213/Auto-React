@@ -99,7 +99,6 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   postComment,
-  deleteComment,
   fetchComments,
   fetchVehicles,
 } from "../redux/ActionCreators";
@@ -113,14 +112,11 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = {
-  // addComment: (vehicleId, text, nextServiceDay) =>
-  //   addComment(vehicleId, text, nextServiceDay),
+  postComment: (vehicleId, date, text, nextServiceDay) =>
+    postComment(vehicleId, date, text, nextServiceDay),
   fetchVehicles: () => fetchVehicles(),
   fetchComments: () => fetchComments(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
-  postComment: () => (vehicleId, text, nextServiceDay) =>
-    postComment(vehicleId, text, nextServiceDay),
-  deleteComment: (vehicleId) => deleteComment(vehicleId),
 };
 
 class Main extends Component {
@@ -139,18 +135,11 @@ class Main extends Component {
           }
           isLoading={this.props.vehicles.isLoading}
           errMess={this.props.vehicles.errMess}
-          // vehicle={
-          //   this.props.vehicles.filter(
-          //     (vehicle) => vehicle.id === +match.params.vehicleId
-          //   )[0]
-          // }
-          comments={this.props.comments.filter(
+          comments={this.props.comments.comments.filter(
             (comment) => comment.vehicleId === +match.params.vehicleId
           )}
+          commentsErrMess={this.props.comments.errMess}
           postComment={this.props.postComment}
-          deleteComment={this.props.deleteComment}
-          // addComment={this.props.addComment}
-          // deleteComment={this.props.deleteComment}
         />
       );
     };

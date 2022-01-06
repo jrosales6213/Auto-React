@@ -16,6 +16,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -25,7 +26,7 @@ function RenderVehicles({ vehicle }) {
   return (
     <div className="col-md-5 m-1">
       <Card>
-        <CardImg top src={vehicle.image} alt={vehicle.make} />
+        <CardImg top src={baseUrl + vehicle.image} alt={vehicle.make} />
 
         <CardBody>
           <CardTitle className="h4">
@@ -46,6 +47,9 @@ class CommentForm extends Component {
 
     this.state = {
       isModalOpen: false,
+      date: "",
+      text: "",
+      nextServiceDay: "",
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -61,10 +65,10 @@ class CommentForm extends Component {
   handleSubmit(values) {
     this.toggleModal();
     this.props.postComment(
-      // this.props.vehicleId,
-      values.vehicleId,
+      this.props.vehicleId,
+      values.date,
       values.text,
-      values.author
+      values.nextServiceDay
     );
   }
 
@@ -82,11 +86,11 @@ class CommentForm extends Component {
           <ModalBody>
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <div className="form-group">
-                <Label htmlFor="author">Next Service Date</Label>
+                <Label htmlFor="date">Date</Label>
                 <Control.text
-                  model=".author"
-                  id="author"
-                  name="author"
+                  model=".date"
+                  id="date"
+                  name="date"
                   className="form-control"
                   placeholder="Date"
                   validators={{
@@ -97,7 +101,33 @@ class CommentForm extends Component {
                 ></Control.text>
                 <Errors
                   className="text-danger"
-                  model=".author"
+                  model=".date"
+                  show="touched"
+                  component="div"
+                  messages={{
+                    required: "Required",
+                    minLength: "Must be at least 2 characters",
+                    maxLength: "Must be 15 characters or less",
+                  }}
+                />
+              </div>
+              <div className="form-group">
+                <Label htmlFor="nextServiceDay">Next Service Date</Label>
+                <Control.text
+                  model=".nextServiceDay"
+                  id="nextServiceDay"
+                  name="nextServiceDay"
+                  className="form-control"
+                  placeholder="Date"
+                  validators={{
+                    required,
+                    minLength: minLength(2),
+                    maxLength: maxLength(15),
+                  }}
+                ></Control.text>
+                <Errors
+                  className="text-danger"
+                  model=".nextServieDay"
                   show="touched"
                   component="div"
                   messages={{
