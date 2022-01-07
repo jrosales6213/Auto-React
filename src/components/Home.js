@@ -9,6 +9,8 @@ import {
   Row,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 function RenderHomePage({ vehicle }) {
   return (
@@ -20,7 +22,7 @@ function RenderHomePage({ vehicle }) {
               <CardImg
                 variant="top"
                 className="card-image"
-                src={vehicle.image}
+                src={baseUrl + vehicle.image}
                 alt={vehicle.name}
               />
             </div>
@@ -39,13 +41,34 @@ function RenderHomePage({ vehicle }) {
 }
 
 function DashboardItems(props) {
-  const homepage = props.vehicles.map((vehicle) => {
+  const homepage = props.vehicles.vehicles.map((vehicle) => {
     return (
-      <div key={vehicle.id} className="col-md-5">
+      <div key={vehicle.id} className="col-md-5 m-1">
         <RenderHomePage vehicle={vehicle} />
       </div>
     );
   });
+
+  if (props.vehicles.isLoading) {
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+  if (props.vehicles.errMess) {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h4>{props.vehicles.errMess}</h4>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container">

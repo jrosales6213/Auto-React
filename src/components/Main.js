@@ -12,7 +12,16 @@ import DashboardItems from "./Home";
 import { Container } from "reactstrap";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { addComment, addVehicle } from "../redux/ActionCreators";
+import {
+  postComment,
+  deleteComment,
+  editComment,
+  postNewVehicle,
+  fetchComments,
+  fetchVehicles,
+} from "../redux/ActionCreators";
+import { actions } from "react-redux-form";
+import NewVehicleForm from "./AddVehicleForm";
 
 const mapStateToProps = (state) => {
   return {
@@ -21,26 +30,40 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = {
-  addComment: (vehicleId, text, nextServiceDay) =>
-    addComment(vehicleId, text, nextServiceDay),
-  addVehicle: (make, model, year, owner) =>
-    addVehicle(make, model, year, owner),
+  postComment: (vehicleId, date, text, nextServiceDay) =>
+    postComment(vehicleId, date, text, nextServiceDay),
+  postNewVehicle: (make, model, year, owner) =>
+    postNewVehicle(make, model, year, owner),
+  fetchVehicles: () => fetchVehicles(),
+  fetchComments: () => fetchComments(),
+  resetFeedbackForm: () => actions.reset("feedbackForm"),
+  deleteComment: (vehicleId) => deleteComment(vehicleId),
+  editComment: (comment) => editComment(comment),
 };
 
 class Main extends Component {
+  componentDidMount() {
+    this.props.fetchVehicles();
+    this.props.fetchComments();
+  }
   render() {
     const VehicleWithId = ({ match }) => {
       return (
         <VehicleInfo
           vehicle={
-            this.props.vehicles.filter(
+            this.props.vehicles.vehicles.filter(
               (vehicle) => vehicle.id === +match.params.vehicleId
             )[0]
           }
-          comments={this.props.comments.filter(
+          isLoading={this.props.vehicles.isLoading}
+          errMess={this.props.vehicles.errMess}
+          comments={this.props.comments.comments.filter(
             (comment) => comment.vehicleId === +match.params.vehicleId
           )}
-          addComment={this.props.addComment}
+          commentsErrMess={this.props.comments.errMess}
+          postComment={this.props.postComment}
+          deleteComment={this.props.deleteComment}
+          editComment={this.props.editComment}
         />
       );
     };
@@ -56,23 +79,34 @@ class Main extends Component {
           <Switch>
             <Route
               exact
-              path="/add-car"
-              render={() => <AddVehicle addVehicle={addVehicle} />}
-            ></Route>
-            <Route
-              exact
               path="/home"
-              render={() => <DashboardItems vehicles={this.props.vehicles} />}
+              render={() => (
+                <DashboardItems
+                  vehicles={this.props.vehicles}
+                  vehiclesLoading={this.props.vehicles.isLoading}
+                  vehiclesErrMess={this.props.vehicles.errMess}
+                />
+              )}
             />
             <Route
               exact
               path="/directory/:vehicleId"
               component={VehicleWithId}
             />
+            <Route
+              exact
+              path="/add-car"
+              render={() => (
+                <NewVehicleForm
+                  resetFeedbackForm={this.props.resetFeedbackForm}
+                  postNewVehicle={this.props.postNewVehicle}
+                />
+              )}
+            />
             <Route exact path="/diagnostics" render={() => <Diagnostics />} />
             <Route exact path="/warranty" component={() => <WarrantyForm />} />
             <Route exact path="/recall" component={() => <RecallForm />} />
-            <Route exact path="/about" component={() => "About"} />
+            <Route exact path="/about" component={() => "about"} />
             <Redirect to="/home" />
           </Switch>
         </Container>
