@@ -136,7 +136,7 @@ export const postComment =
       text: text,
       nextServiceDay: nextServiceDay,
     };
-    newComment.date = new Date().toISOString();
+    newComment.date = new Date().toLocaleDateString();
 
     return fetch(baseUrl + "comments", {
       method: "POST",

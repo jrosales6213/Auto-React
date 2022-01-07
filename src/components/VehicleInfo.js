@@ -188,18 +188,10 @@ function RenderComments({
 
                   <td>
                     <button className="btn" onClick={editComment}>
-                      <FontAwesomeIcon
-                        className=""
-                        icon={faEdit}
-                        // onClick={console.log("you clicked edit button")}
-                      />
+                      <FontAwesomeIcon className="" icon={faEdit} />
                     </button>
                     <button className="btn" onClick={deleteComment}>
-                      <FontAwesomeIcon
-                        // key={comment.vehicleId}
-                        // onClick={console.log("you clicked delete button")}
-                        icon={faTrash}
-                      />
+                      <FontAwesomeIcon icon={faTrash} />
                     </button>
                   </td>
                 </tr>

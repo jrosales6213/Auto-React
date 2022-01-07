@@ -33,31 +33,3 @@ export const Comments = (state = { errMess: null, comments: [] }, action) => {
       return state;
   }
 };
-
-// return {
-//   ...state,
-//   [params.vehicleId]: state[params.vehicleId].map((r) => {
-//     if (r.id === params.recordId) {
-//       return action.body
-//     }
-//     return r
-//   })
-// }
-
-// case "EDIT_TODO":
-//   return {
-//     ...state,
-//     text: state.todos[action.payload],
-//     selected: action.payload
-//   };
-// case "EDIT_ADD_TODO":
-//   const todo4 = state.todos.map((todo, i) =>
-//     i !== action.payload.selected ? todo : action.payload.value
-//   );
-//   setPersist(todo4);
-//   return {
-//     ...state,
-//     todos: todo4,
-//     selected: undefined,
-//     text: ""
-//   };
