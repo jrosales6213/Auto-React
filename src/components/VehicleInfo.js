@@ -158,7 +158,13 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, postComment, vehicleId, deleteComment }) {
+function RenderComments({
+  comments,
+  postComment,
+  vehicleId,
+  deleteComment,
+  editComment,
+}) {
   if (comments) {
     return (
       <div className="col">
@@ -179,20 +185,19 @@ function RenderComments({ comments, postComment, vehicleId, deleteComment }) {
                   <td>{comment.date}</td>
                   <td>{comment.text}</td>
                   <td>{comment.nextServiceDay}</td>
-                  {/* <delete and edit buttons go here/> */}
+
                   <td>
-                    <button className="btn">
+                    <button className="btn" onClick={editComment}>
                       <FontAwesomeIcon
                         className=""
                         icon={faEdit}
-                        onClick={console.log("you clicked edit button")}
+                        // onClick={console.log("you clicked edit button")}
                       />
                     </button>
-                    <button className="btn">
+                    <button className="btn" onClick={deleteComment}>
                       <FontAwesomeIcon
-                        key={comment.vehicleId}
+                        // key={comment.vehicleId}
                         // onClick={console.log("you clicked delete button")}
-                        onClick={() => deleteComment(comment.id)}
                         icon={faTrash}
                       />
                     </button>
@@ -241,6 +246,7 @@ function VehicleInfo(props) {
             postComment={props.postComment}
             vehicleId={props.vehicle.id}
             deleteComment={props.deleteComment}
+            editComment={props.editComment}
           />
         </div>
       </div>

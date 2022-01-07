@@ -99,6 +99,9 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   postComment,
+  deleteComment,
+  editComment,
+  postNewVehicle,
   fetchComments,
   fetchVehicles,
 } from "../redux/ActionCreators";
@@ -114,9 +117,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   postComment: (vehicleId, date, text, nextServiceDay) =>
     postComment(vehicleId, date, text, nextServiceDay),
+  postNewVehicle: (make, model, year, owner) =>
+    postNewVehicle(make, model, year, owner),
   fetchVehicles: () => fetchVehicles(),
   fetchComments: () => fetchComments(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
+  deleteComment: (vehicleId) => deleteComment(vehicleId),
+  editComment: (comment) => editComment(comment),
 };
 
 class Main extends Component {
@@ -140,6 +147,8 @@ class Main extends Component {
           )}
           commentsErrMess={this.props.comments.errMess}
           postComment={this.props.postComment}
+          deleteComment={this.props.deleteComment}
+          editComment={this.props.editComment}
         />
       );
     };
@@ -183,6 +192,7 @@ class Main extends Component {
               component={() => (
                 <TestVehicleForm
                   resetFeedbackForm={this.props.resetFeedbackForm}
+                  postNewVehicle={this.props.postNewVehicle}
                 />
               )}
             />

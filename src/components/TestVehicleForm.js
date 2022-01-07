@@ -41,6 +41,12 @@ class TestVehicleForm extends Component {
     console.log("Current State is: " + JSON.stringify(values));
     alert("Current State is: " + JSON.stringify(values));
     this.props.resetFeedbackForm();
+    this.props.postNewVehicle(
+      values.make,
+      values.model,
+      values.year,
+      values.owner
+    );
   }
 
   render() {
