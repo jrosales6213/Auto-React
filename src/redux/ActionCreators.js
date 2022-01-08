@@ -176,3 +176,56 @@ export const editComment = (vehicleId) => ({
   type: ActionTypes.EDIT_COMMENT,
   payload: vehicleId,
 });
+
+//testing api
+
+export const fetchAPI = () => (dispatch) => {
+  dispatch(apiLoading());
+
+  return fetch("http://api.carmd.com/v3.0/maint?year=2015", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      authorization: "Basic MjA0MWRlMjQtZTFiMS00ZjUyLTk2NzQtZjRmZDE3Y2EyNzlj",
+      "partner-token": "b2617703f4924d4aa6952baf3fa064e2",
+    },
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errMess = new Error(error.message);
+        throw errMess;
+      }
+    )
+
+    .then((response) => response.json())
+    .then((data) => dispatch(addAPIS(data)))
+    .catch((error) => dispatch(apiFailed(error.message)));
+};
+export const apiLoading = () => ({
+  type: ActionTypes.API_LOADING,
+});
+
+export const apiFailed = (errMess) => ({
+  type: ActionTypes.API_FAILED,
+  payload: errMess,
+});
+
+export const addAPIS = (data) => ({
+  type: ActionTypes.ADD_APIS,
+  payload: data,
+});
+export const addAPI = (data) => ({
+  type: ActionTypes.ADD_API,
+  payload: data,
+});

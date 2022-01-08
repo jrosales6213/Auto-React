@@ -14,3 +14,8 @@ export const ADD_VEHICLES = "ADD_VEHICLES";
 export const POST_NEW_VEHICLE = "POST_NEW_VEHICLE";
 
 export const ADD_VEHICLE = "ADD_VEHICLE";
+
+export const ADD_API = "ADD_API";
+export const ADD_APIS = "ADD_APIS";
+export const API_LOADING = "API_LOADING";
+export const API_FAILED = "API_FAILED";

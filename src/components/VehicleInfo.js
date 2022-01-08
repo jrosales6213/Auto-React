@@ -187,8 +187,12 @@ function RenderComments({
                   <td>{comment.nextServiceDay}</td>
 
                   <td>
-                    <button className="btn" onClick={editComment}>
-                      <FontAwesomeIcon className="" icon={faEdit} />
+                    <button
+                      className="btn"
+                      key={comment.id}
+                      onClick={editComment}
+                    >
+                      <FontAwesomeIcon key={comment.id} icon={faEdit} />
                     </button>
                     <button className="btn" onClick={deleteComment}>
                       <FontAwesomeIcon icon={faTrash} />

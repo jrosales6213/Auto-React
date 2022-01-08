@@ -22,11 +22,11 @@ export const Comments = (state = { errMess: null, comments: [] }, action) => {
     case ActionTypes.EDIT_COMMENT:
       return {
         ...state,
-        comments: state.comments.map((r) => {
-          if (r.id === action.payload) {
+        comments: state.comments.map((comment) => {
+          if (comment.id === action.payload) {
             return action.payload;
           }
-          return r;
+          return comment;
         }),
       };
     default:
