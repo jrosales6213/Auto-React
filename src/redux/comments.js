@@ -1,6 +1,3 @@
-import { actionTypes } from "react-redux-form";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
 import * as ActionTypes from "./ActionTypes";
 
 export const Comments = (state = { errMess: null, comments: [] }, action) => {
