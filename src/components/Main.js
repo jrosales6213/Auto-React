@@ -18,11 +18,9 @@ import {
   postNewVehicle,
   fetchComments,
   fetchVehicles,
-  fetchAPI,
 } from "../redux/ActionCreators";
 import { actions } from "react-redux-form";
 import NewVehicleForm from "./AddVehicleForm";
-import TestApi from "./TestingAPI";
 
 const mapStateToProps = (state) => {
   return {
@@ -40,14 +38,12 @@ const mapDispatchToProps = {
   resetFeedbackForm: () => actions.reset("feedbackForm"),
   deleteComment: (vehicleId) => deleteComment(vehicleId),
   editComment: (comment) => editComment(comment),
-  fetchAPI: () => fetchAPI(),
 };
 
 class Main extends Component {
   componentDidMount() {
     this.props.fetchVehicles();
     this.props.fetchComments();
-    this.props.fetchAPI();
   }
   render() {
     const VehicleWithId = ({ match }) => {
@@ -109,11 +105,7 @@ class Main extends Component {
             <Route exact path="/diagnostics" render={() => <Diagnostics />} />
             <Route exact path="/warranty" component={() => <WarrantyForm />} />
             <Route exact path="/recall" component={() => <RecallForm />} />
-            <Route
-              exact
-              path="/about"
-              component={() => <TestApi data={this.props.data} />}
-            />
+            <Route exact path="/about" component={() => "About"} />
             <Redirect to="/home" />
           </Switch>
         </Container>
