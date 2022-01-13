@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { faTrash, faEdit, faPencil } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import {
   Card,
   CardImg,
@@ -187,14 +187,13 @@ function RenderComments({
                   <td>{comment.nextServiceDay}</td>
 
                   <td>
-                    <button
-                      className="btn"
-                      key={comment.id}
-                      onClick={editComment}
-                    >
+                    <button className="btn" key={comment.id}>
                       <FontAwesomeIcon key={comment.id} icon={faEdit} />
                     </button>
-                    <button className="btn" onClick={deleteComment}>
+                    <button
+                      className="btn"
+                      onClick={() => deleteComment(comment.id)}
+                    >
                       <FontAwesomeIcon icon={faTrash} />
                     </button>
                   </td>

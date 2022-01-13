@@ -16,8 +16,6 @@ import {
   DropdownToggle,
   UncontrolledDropdown,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import { render } from "@testing-library/react";
 
 class Topbar extends Component {
   constructor(props) {
@@ -46,35 +44,6 @@ class Topbar extends Component {
         </Button>
 
         <Nav className="ml-auto" navbar>
-          {/* ---- NOTIFICAITON ICON------
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle nav className="notifications new p-2">
-              <FontAwesomeIcon icon={faBell} size="lg" />
-              <sup>
-                <span className="counter">2</span>
-              </sup>
-            </DropdownToggle>
-             ----NOTIFICATION TOGGLE----- 
-            <DropdownMenu className="notifications-dropdown-menu">
-              <DropdownItem>
-                <div className="body-col">
-                  <p>
-                    <span className="accent">Recall: </span>
-                    Electrical problems in the interior of vehicle.
-                  </p>
-                </div>
-              </DropdownItem>
-              <DropdownItem>
-                <div className="body-col">
-                  <p>
-                    <span className="accent">Reminder: </span>
-                    Oil change in 2 days.
-                  </p>
-                </div>
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>  */}
-
           {/*---- PROFILE ICON -----*/}
           <UncontrolledDropdown inNavbar nav>
             <DropdownToggle nav>

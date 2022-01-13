@@ -80,31 +80,4 @@ class SideBar extends Component {
   }
 }
 
-// const submenus = [
-//   [
-//     {
-//       title: "Honda Civic",
-//       target: "Car-1",
-//     },
-//     {
-//       title: "Toyota Corolla",
-//       target: "Home-2",
-//     },
-//     {
-//       title: "Home 3",
-//       target: "Home-3",
-//     },
-//   ],
-//   [
-//     {
-//       title: "Page 1",
-//       target: "Page-1",
-//     },
-//     {
-//       title: "Page 2",
-//       target: "Page-2",
-//     },
-//   ],
-// ];
-
 export default SideBar;

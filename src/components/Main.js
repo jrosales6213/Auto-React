@@ -1,10 +1,9 @@
-import React, { Component, setState } from "react";
+import React, { Component } from "react";
 import VehicleInfo from "./VehicleInfo";
 import Topbar from "./Topbar";
 import Sidebar from "./SideBar";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AddVehicle from "./AddVehicleForm";
 import Diagnostics from "./DiagnosticsForm";
 import WarrantyForm from "./WarrantyForm";
 import RecallForm from "./RecallForm";
