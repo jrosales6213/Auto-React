@@ -10,9 +10,7 @@ records of their personl vehicles as well as friends/family vehicles if you wish
 
 ![Screenshot](./public/images/screenshot.png)
 
-![Screenshot](./public/images/screenshot.png)
-
-![Screenshot](./public/images/projectimage2.png)
+![Screenshot](./public/images/screenshot1.png)
 
 # Tools
 
