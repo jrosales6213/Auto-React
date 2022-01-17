@@ -22,7 +22,7 @@ class SideBar extends Component {
         <div className="sidebar-header">
           <span
             color="info"
-            onClick={this.props.isMenuOpen}
+            // onClick={this.props.isMenuOpen}
             style={{ color: "#fff" }}
           >
             &times;

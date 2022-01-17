@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import VehicleInfo from "./VehicleInfo";
 import Topbar from "./Topbar";
 import Sidebar from "./SideBar";
+import LoginPage from "./LoginPage";
 import classNames from "classnames";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Diagnostics from "./DiagnosticsForm";
@@ -105,7 +106,9 @@ class Main extends Component {
             <Route exact path="/diagnostics" render={() => <Diagnostics />} />
             <Route exact path="/warranty" component={() => <WarrantyForm />} />
             <Route exact path="/recall" component={() => <RecallForm />} />
+            <Route exact path="/login" render={() => <LoginPage />} />
             <Route exact path="/about" component={() => "About"} />
+
             <Redirect to="/home" />
           </Switch>
         </Container>

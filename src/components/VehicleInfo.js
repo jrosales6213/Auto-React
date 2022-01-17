@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faComments } from "@fortawesome/free-solid-svg-icons";
 import {
   Card,
   CardImg,
@@ -54,6 +54,8 @@ class CommentForm extends Component {
 
     this.toggleModal = this.toggleModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   toggleModal = () => {
@@ -70,6 +72,19 @@ class CommentForm extends Component {
       values.text,
       values.nextServiceDay
     );
+  }
+  handleDelete(event) {
+    alert(`You deleted comment :  ${event.text} created ${event.date}`);
+    this.props.deleteComment(event.id);
+  }
+  handleEdit(comment) {
+    // console.log(comment.id, comment.text, comment.date);
+    this.setState({
+      isModalOpen: !this.state.isModalOpen,
+      date: comment.date,
+      text: comment.text,
+      nextServiceDay: comment.nextServiceDay,
+    });
   }
 
   render() {
@@ -153,6 +168,43 @@ class CommentForm extends Component {
             </LocalForm>
           </ModalBody>
         </Modal>
+        <Table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Notes</th>
+              <th>Next Service</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          {this.props.comments.map((comment) => {
+            return (
+              <tbody>
+                <tr key={comment.id}>
+                  <td>{comment.date}</td>
+                  <td>{comment.text}</td>
+                  <td>{comment.nextServiceDay}</td>
+
+                  <td>
+                    <button
+                      className="btn"
+                      // onClick={() => this.props.deleteComment(comment.id)}
+                      onClick={() => this.handleEdit(comment.id)}
+                    >
+                      <FontAwesomeIcon key={comment.id} icon={faEdit} />
+                    </button>
+                    <button
+                      className="btn"
+                      onClick={() => this.handleDelete(comment)}
+                    >
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            );
+          })}
+        </Table>
       </div>
     );
   }
@@ -168,8 +220,13 @@ function RenderComments({
   if (comments) {
     return (
       <div className="col">
-        <CommentForm vehicleId={vehicleId} postComment={postComment} />
-        <Table>
+        <CommentForm
+          vehicleId={vehicleId}
+          postComment={postComment}
+          comments={comments}
+          deleteComment={deleteComment}
+        />
+        {/* <Table>
           <thead>
             <tr>
               <th>Date</th>
@@ -201,7 +258,7 @@ function RenderComments({
               </tbody>
             );
           })}
-        </Table>
+        </Table> */}
       </div>
     );
   }

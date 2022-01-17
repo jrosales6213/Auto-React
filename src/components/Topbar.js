@@ -52,7 +52,7 @@ class Topbar extends Component {
                 src="https://www.w3schools.com/howto/img_avatar.png"
                 alt="avatar"
               />
-              <span class="name">JR</span>
+              <span className="name">JR</span>
             </DropdownToggle>
 
             {/* PROFILE ICON TOGGLE */}
