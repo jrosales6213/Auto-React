@@ -226,39 +226,6 @@ function RenderComments({
           comments={comments}
           deleteComment={deleteComment}
         />
-        {/* <Table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Notes</th>
-              <th>Next Service</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          {comments.map((comment) => {
-            return (
-              <tbody>
-                <tr key={comment.id}>
-                  <td>{comment.date}</td>
-                  <td>{comment.text}</td>
-                  <td>{comment.nextServiceDay}</td>
-
-                  <td>
-                    <button className="btn" key={comment.id}>
-                      <FontAwesomeIcon key={comment.id} icon={faEdit} />
-                    </button>
-                    <button
-                      className="btn"
-                      onClick={() => deleteComment(comment.id)}
-                    >
-                      <FontAwesomeIcon icon={faTrash} />
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            );
-          })}
-        </Table> */}
       </div>
     );
   }
